@@ -37,9 +37,11 @@ public class Main {
         // Set if the score is greater than 20 assign 20.
         if (yourScore > 20) { // set the score maximun 20
             yourScore = 20;
-            if (text.contains("a")) {// Set if contain a take of 5 point
-                yourScore -= 5;
-            }
+        }
+
+        // Set if contain a take of 5 point. FUNZIONA PERCHè SOLO LA PRIMA FRASE RISPETTA LE CONDIZIONI IMPOSTATE. ANDREBBE MESSO FUORI. spostato dopo
+        if (text.contains("a")) {
+            yourScore -= 5;
         }
         // ho provato a nestarli come sopra ma non funziona. Perchè
         if (text.equals(text.toLowerCase())) {// set 10 point more if is all to lower case
@@ -86,22 +88,21 @@ public class Main {
     public static double exercise2(String mealType, double weight, double expectedScore) {
         double yourMealScore = 0;
         // Start your code here
+
         // questi dati potrebbero essere inutili. li ho aggiunti per avere maggior chiarezza per me
         int multipleScoreSandwich = 5;
         int multipleScoreSoup = 3;
 
-        if ( mealType == "sandwich"){// if mealType is sandwich times by 5
+        if ( mealType.equals("sandwich") ){// if mealType is sandwich times by 5
             yourMealScore = multipleScoreSandwich * weight;
-            if (yourMealScore < 5) { // if the score is lower than 5 increase by 5
-                yourMealScore = 5;
-            }
         }
 
-        if ( mealType == "soup"){ // if mealType is soup times by 3
+        if ( mealType.equals("soup")){ // if mealType is soup times by 3
             yourMealScore = multipleScoreSoup * weight;
-            if (yourMealScore < 5) { // if the score is lower than 5 increase by 5
-                yourMealScore = 5;
-            }
+        }
+
+        if (yourMealScore < 5) { // if the score is lower than 5 increase by 5. PUO' ANDARE ANCHE FUORI SENZA RIPETERLO ANCHE SOTTO.
+            yourMealScore = 5;
         }
         // End it here
 

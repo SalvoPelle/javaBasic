@@ -7,10 +7,10 @@ import java.util.NoSuchElementException;
 public class Main {
     public static void main(String[] args) {
         //exercise1();
-        //exercise2();
+        exercise2();
         //exercise3();
         //exercise4();
-        exercise5();
+        //exercise5();
     }
 
     /**
@@ -78,13 +78,11 @@ public class Main {
         System.out.println("Exercise 2");
         // Write code here
 
-        minNumber = items.get(0);
-        maxNumber = items.get(1);
-
         for (int i : items) {
             if (i < minNumber){
                 minNumber = i;
-            }else if (i > maxNumber) {
+            }
+            if (i > maxNumber) {
                 maxNumber = i;
             }
         }
@@ -168,7 +166,10 @@ public class Main {
 
                 int results = (timesTableNumber*i);
                 String newResults = String.valueOf(results);
-                newResults = newResults + ",";
+
+                if (i<=9){
+                    newResults = newResults+",";
+                }
 
                 if (timesTableNumber == 1) {
                     System.out.print(newResults);
@@ -191,6 +192,7 @@ public class Main {
                 }else if (timesTableNumber == 10) {
                     System.out.print(newResults);
                 }
+
                 // riesco a stampare ma non riesco a togliere l'ultima virgola. sicuramente esiste sia un metdo per inserire la virgola sia uno per togliere l'ultima ma non l'ho trovato
 
                 //System.out.println(timesTableNumber + "x" + i +"=" + (timesTableNumber*i));
